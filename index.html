@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Agenda de Contatos</title>
+    <link rel="stylesheet" href="style.css" /> 
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
+    <script type="text/javascript" src="banco.js"></script>
+    <script type="text/javascript" src="FileSaver.js"></script>
+</head>
+
+<body>
+    <div class = "card">
+        <form class="card-form">
+            <input id="id" type="hidden" value=""/>
+            <div class="input">
+                <input id="nome" class="input-field" placeholder="Nome" type="text" />
+            </div>
+            <div class="input">
+                <input id="idade" class="input-field" placeholder="Idade" type="number" value=""/>
+            </div>
+            <div class="input">
+                <input id="telefone" class="input-field" placeholder="Telefone" type="number" />
+            </div>                    
+        </form>
+        <div class="action">
+            <button class="action-button" onclick="return salvar()">Novo</button>
+        </div>
+        <div class="action">
+            <button class="action-button" onclick="return listar()">Listar</button>
+        </div>
+        <div class="action">
+            <button class="action-button" onclick="return buscar()">Buscar</button>
+        </div>
+        <div class="action">
+            <button class="action-button" onclick="return excluir()">Excluir</button>
+        </div>    
+        <div class="mt-10 align-center" id="agenda">
+            <table>
+                <thead>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Telefone</th>
+                </thead>
+                <tbody id="listaAgenda">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
