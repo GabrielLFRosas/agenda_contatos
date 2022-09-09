@@ -37,6 +37,7 @@ function salvar(){
 
         })
     }
+    listar();
 };
 
 function listar(){
@@ -49,7 +50,8 @@ function listar(){
            
             for(var i = 0; i < rows.length; i++){
                 tr += '<tr>';
-                tr += '<td onClick="return atualizar(' + rows[i].id + ')">' + rows[i].nome + '</td>';
+                tr += '<td onClick="return atualizar(' + rows[i].id + ')"><img src="edit.png" width = 20 height = 20></td>'
+                tr += '<td>' + rows[i].nome + '</td>';
                 tr += '<td>' + rows[i].idade + '</td>';
                 tr += '<td>' + rows[i].numero + '</td>';
                 tr += '</tr>';
@@ -90,7 +92,8 @@ function buscar(){
             console.log(resultado)
             for(var i = 0; i < rows.length; i++){
                 tr += '<tr>';
-                tr += '<td onClick="return atualizar(' + rows[i].id + ')">' + rows[i].nome + '</td>';
+                tr += '<td><img src="edit.png"></td>'
+                tr += '<td onClick="return atualizar(' + rows[i].id + ')"><img src="edit.png" width = 20 height = 20></td>'
                 tr += '<td>' + rows[i].idade + '</td>';
                 tr += '<td>' + rows[i].numero + '</td>';
                 tr += '</tr>';
@@ -99,6 +102,7 @@ function buscar(){
             
         }, null)
     })
+    
 }
 
 function excluir(){
@@ -123,4 +127,5 @@ function excluir(){
             type: "text/plain;charset=utf-8"
         })
     saveAs(arquivo, 'LOG' + '.txt')
+    listar()
 }
